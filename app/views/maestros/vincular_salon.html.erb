@@ -1,0 +1,19 @@
+<h1>El maestro <%= @maestro.nombre %></h1>
+ <p>Listado de Salones ya vinculados</p>
+ <ul>
+  <% @maestro.salons.each do |salon| %>
+    <li><%= salon.nombre %></li>
+  <% end %>
+ </ul>
+ <p>Vinculaciones disponibles</p>
+ <form>
+   <p>
+     <select>
+    <% salones_disponibles.each do |salon| %>
+       <option value='<%= salon.id %>'> <%= salon.nombre %></option>
+       <% end%>
+     </select>
+   </p>
+   <input type='submit' value='Enviar' />
+   <input type='submit' value='Cancelar' />
+ </form>
